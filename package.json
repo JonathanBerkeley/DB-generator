@@ -1,0 +1,25 @@
+{
+  "name": "db-generator",
+  "version": "0.0.1",
+  "description": "Database generator for MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dbgen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanBerkeley/DB-generator.git"
+  },
+  "keywords": [
+    "DB-Generator",
+    "JSON",
+    "MongoDB",
+    "Javascript"
+  ],
+  "author": "Jonathan Berkeley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonathanBerkeley/DB-generator/issues"
+  },
+  "homepage": "https://github.com/JonathanBerkeley/DB-generator#readme"
+}
