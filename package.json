@@ -1,10 +1,11 @@
 {
   "name": "db-generator",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "Database generator for MongoDB",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dbgen": "src/index.js"
+    "dbgen": "cross-env nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +24,10 @@
   },
   "homepage": "https://github.com/JonathanBerkeley/DB-generator#readme",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "faker": "^5.5.3",
-    "mongodb": "^4.1.4"
+    "mongodb": "^4.1.4",
+    "nodemon": "^2.0.14"
   }
 }

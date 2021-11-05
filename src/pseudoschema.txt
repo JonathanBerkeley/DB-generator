@@ -1,0 +1,18 @@
+Clan {
+    id
+    name
+    createdDate
+    XP
+    members?
+}
+
+Player {
+    id 
+    username
+    xp
+    level
+    games
+    wins
+    damageDone
+    clan
+}
