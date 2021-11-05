@@ -9,6 +9,7 @@ Clan {
 Player {
     id 
     username
+    avatar
     xp
     level
     games

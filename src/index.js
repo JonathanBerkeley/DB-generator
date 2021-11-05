@@ -14,6 +14,7 @@ class Config {
     static CLIENT = new MongoClient(this.DB_URI)
     static VERSION = process.env.npm_package_version
     static DB = undefined
+    static CLEAR_DB = 1;
 }
 
 // Adapted from https://mongodb.github.io/node-mongodb-native/4.1/
@@ -23,15 +24,23 @@ async function main() {
     
     Config.DB = Config.CLIENT.db(Config.DB_NAME)
     if (!Config.DB) throw "Failure getting database"
-
+    
     // DB insertion
     Generator.InsertDB(Config.DB)
     
+    // Clear DB
+    if (Config.CLEAR_DB) {
+        await Generator.DeleteClanData()
+        await Generator.DeletePlayerData()
+    }
+
     // Clan generation
     await Generator.CreateClanData()
 
     // Player generation
-    await Generator.CreatePlayerData()
+    await Generator.CreatePlayerData(1)
+
+    
 
     return "Normal termination\nExit code: " + (process.exitCode ?? '0')
 }

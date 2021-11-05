@@ -1,11 +1,12 @@
 {
   "name": "db-generator",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Database generator for MongoDB",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dbgen": "cross-env nodemon src/index.js"
+    "dbgen": "cross-env nodemon src/index.js",
+    "v": "npm version patch"
   },
   "repository": {
     "type": "git",
