@@ -27,15 +27,14 @@ async function main() {
     // DB insertion
     Generator.InsertDB(Config.DB)
     
-    // Clear DB on load
+    // Optionally clear DB on load
     if (Config.CLEAR_DB)
         await Generator.DeleteAllData()
 
-    // Clan generation
-    await Generator.CreateClanData(2)
-
-    // Player generation
-    await Generator.CreatePlayerData(1)
+    console.log("-- [ Generating documents ] --")
+    await Generator.CreatePlayerData(100) // Players with no clan related
+    await Generator.CreateAccountData(100) // Accounts with no player related
+    await Generator.CreateClanData(10_000) // Clan requires players, players require accounts
 
     return "\nExit code: " + (process.exitCode ?? "0 - Success")
 }

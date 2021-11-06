@@ -1,6 +1,6 @@
 {
   "name": "db-generator",
-  "version": "0.1.6",
+  "version": "0.2.1",
   "description": "Database generator for MongoDB",
   "main": "index.js",
   "type": "module",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/JonathanBerkeley/DB-generator#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "faker": "^5.5.3",
