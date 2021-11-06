@@ -28,13 +28,11 @@ async function main() {
     Generator.InsertDB(Config.DB)
     
     // Clear DB on load
-    if (Config.CLEAR_DB) {
-        await Generator.DeleteClanData()
-        await Generator.DeletePlayerData()
-    }
+    if (Config.CLEAR_DB)
+        await Generator.DeleteAllData()
 
     // Clan generation
-    await Generator.CreateClanData(10)
+    await Generator.CreateClanData(2)
 
     // Player generation
     await Generator.CreatePlayerData(1)

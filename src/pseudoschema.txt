@@ -3,7 +3,7 @@ Clan {
     name
     createdDate
     XP
-    members?
+    players?
 }
 
 Player {
@@ -26,5 +26,5 @@ Account {
 }
 
 Static {
-    
+
 }
