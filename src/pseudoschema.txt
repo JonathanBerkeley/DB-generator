@@ -7,7 +7,7 @@ Clan {
 }
 
 Player {
-    id 
+    id
     username
     avatar
     xp
@@ -15,5 +15,16 @@ Player {
     games
     wins
     damageDone
+    account
     clan
+}
+
+Account {
+    name
+    email
+    password
+}
+
+Static {
+    
 }

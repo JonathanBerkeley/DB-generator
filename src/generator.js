@@ -14,9 +14,17 @@ export default class Generator {
     }
 
     //#region Create
-    static async CreateClanData() {
-        let result = await clans.insertOne({"abcd" : "efgh"})
-        console.log(result)
+    static async CreateClanData(count) {
+        for (let i = count; i > 0; --i) {
+
+            await clans.insertOne({
+                "clan_id": faker.datatype.uuid(),
+                "name" : this.#Capitalized() + this.#Capitalized() + this.#Capitalized(),
+                "created_date" : faker.date.past(5),
+                "xp" : faker.datatype.number({min: 10_000, max: 1_000_000}),
+                "players" : ""
+            })
+        }
     }
 
     static async CreatePlayerData(count) {
@@ -28,14 +36,16 @@ export default class Generator {
             let wins = (~~(games / 1.8) + faker.datatype.number({min: 0, max: 12}))
 
             await players.insertOne({
-                "id" : faker.datatype.uuid(),
+                "uuid" : faker.datatype.uuid(),
                 "username" : faker.internet.userName(),
                 "avatar" : faker.image.avatar(),
                 "xp" : xp,
                 "level" : level,
                 "games" : games,
                 "wins" : wins,
-                "damage_done" : faker.datatype.float({min: 1024.0, max: 1_000_000.0})
+                "damage_done" : faker.datatype.float({min: 1024.0, max: 1_000_000.0}),
+                "account" : "",
+                "clan" : ""
             })
         }
     }
@@ -66,5 +76,9 @@ export default class Generator {
     // Local
     static #GetCollection(name) {
         return db.collection(name)
+    }
+
+    static #Capitalized(word = faker.company.bsBuzz()) {
+        return word.charAt(0).toUpperCase() + word.substring(1)
     }
 }
