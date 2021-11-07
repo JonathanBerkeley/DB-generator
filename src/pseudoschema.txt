@@ -20,6 +20,7 @@ Player {
 }
 
 Account {
+    id
     name
     email
     password
