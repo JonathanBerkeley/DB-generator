@@ -3,7 +3,7 @@ Clan {
     name
     createdDate
     XP
-    players?
+    players
 }
 
 Player {
@@ -16,7 +16,7 @@ Player {
     wins
     damageDone
     account
-    clan
+    clan?
 }
 
 Account {
@@ -29,3 +29,6 @@ Account {
 Static {
 
 }
+
+Clans -One-to-many-> Players
+Players -One-to-one-> Accounts
